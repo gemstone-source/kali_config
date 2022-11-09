@@ -27,15 +27,16 @@ mkdir ~/.fonts
 mv *.ttf ~/.fonts
 
 # Setting i3 config files
-mkdir -p ~/.config/i3
-cp i3/config/* ~/.config/i3/
+mkdir ~/.config/i3
+cp i3/* ~/.config/i3/
 
 # Setting gtk themes
+touch ~/.gtkrc-2.0
 cp .gtkrc-2.0 ~/.gtkrc-2.0 
-cp -r gtk-3.0 ~/.config/
+cp  gtk-3.0/* ~/.config/
 
 # Configurations for vim editor
-mkdir -p ~/.vimrc
+touch ~/.vimrc
 cp .vimrc ~/.vimrc 
 
 # Setting zsh environment
