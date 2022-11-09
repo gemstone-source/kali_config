@@ -6,6 +6,22 @@ sudo apt install i3 -y&& sudo apt install feh  -y && sudo apt install arandr -y 
 sudo apt install nitrogen -y && sudo apt install thunar -y && sudo apt install rofi -y  && sudo apt install i3blocks -y
 sudo apt install gnome-terminal -y
 
+# Setting i3 config files
+mkdir ~/.config/i3
+cp i3/* ~/.config/i3/
+
+# Setting gtk themes
+touch ~/.gtkrc-2.0
+cp .gtkrc-2.0 ~/.gtkrc-2.0 
+cp  gtk-3.0/* ~/.config/
+
+# Configurations for vim editor
+touch ~/.vimrc
+cp .vimrc ~/.vimrc 
+
+# Setting zsh environment
+# cp .zshrc ~/.zshrc 
+
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
@@ -25,20 +41,3 @@ unzip master.zip
 cd YosemiteSanFranciscoFont-master 
 mkdir ~/.fonts
 mv *.ttf ~/.fonts
-
-# Setting i3 config files
-cd ../../
-mkdir ~/.config/i3
-cp i3/* ~/.config/i3/
-
-# Setting gtk themes
-touch ~/.gtkrc-2.0
-cp .gtkrc-2.0 ~/.gtkrc-2.0 
-cp  gtk-3.0/* ~/.config/
-
-# Configurations for vim editor
-touch ~/.vimrc
-cp .vimrc ~/.vimrc 
-
-# Setting zsh environment
-# cp .zshrc ~/.zshrc 
