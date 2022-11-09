@@ -20,6 +20,7 @@ You can change wallpaper the way you want to and to do so just change this line 
 exec --no-startup-id nitrogen  --set-auto  ./pictures/05.jpg --head=0 && nitrogen --set-auto ./pictures/05.jpg --head=1
 ```
 Replace `./pictures/05.jpg` with your wallpaper path.
+
 Also visit [rofi_advanced](https://github.com/adi1090x/rofi) for more customization of `rofi`
 
 ## References.
