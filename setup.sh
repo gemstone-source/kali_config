@@ -34,7 +34,7 @@ mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
 echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' | sudo tee /etc/apt/sources.list.d/home:Horst3180.list
 curl -fsSL https://download.opensuse.org/repositories/home:Horst3180/Debian_8.0/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_Horst3180.gpg > /dev/null
 sudo apt update -y
-sudo apt install arc-theme
+sudo apt install arc-theme -y
 
 # Download fonts
 wget https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip 
