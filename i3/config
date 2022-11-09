@@ -157,6 +157,8 @@ assign [class="Thunar"] $ws3
 assign [class="obsidian"] $ws4
 assign [class="Code"] $ws4
 assign [class="Sublime_text"] $ws5
+assign [class="vlc"] $ws10
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
