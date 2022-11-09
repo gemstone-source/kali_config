@@ -27,6 +27,7 @@ mkdir ~/.fonts
 mv *.ttf ~/.fonts
 
 # Setting i3 config files
+cd ../
 mkdir ~/.config/i3
 cp i3/* ~/.config/i3/
 
