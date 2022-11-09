@@ -2,9 +2,9 @@
 
 #install i3 
 sudo apt update 
-sudo apt install i3 && sudo apt install feh && sudo apt install arandr && sudo apt install lxappearance
-sudo apt install nitrogen && sudo apt install thunar && sudo apt install rofi && sudo apt install i3blocks
-sudo apt install gnome-terminal
+sudo apt install i3 -y&& sudo apt install feh  -y && sudo apt install arandr -y && sudo apt install lxappearance -y
+sudo apt install nitrogen -y && sudo apt install thunar -y && sudo apt install rofi -y  && sudo apt install i3blocks -y
+sudo apt install gnome-terminal -y
 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
@@ -16,7 +16,7 @@ mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
 # Download arc-themes
 echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' | sudo tee /etc/apt/sources.list.d/home:Horst3180.list
 curl -fsSL https://download.opensuse.org/repositories/home:Horst3180/Debian_8.0/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_Horst3180.gpg > /dev/null
-sudo apt update
+sudo apt update -y
 sudo apt install arc-theme
 
 # Download fonts
