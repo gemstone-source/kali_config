@@ -3,7 +3,7 @@ This is dotfile configuration for clean installed linux, it has basically aimed 
 
 This srcipt has been tested on kali linux machine but it can be compatible with all debian family, feel free to customize it the way you like.
 ## Usage 
-Clone this repository and then run the setup.sh script
+Clone this repository and then run the `setup.sh` script or copy the following commands:
 ```
 git clone https://github.com/gemstone-source/kali_config.git
 cd kali_config
