@@ -5,7 +5,7 @@ sudo apt update
 sudo apt install i3 && sudo apt install feh && sudo apt install arandr && sudo apt install lxappearance
 sudo apt install nitrogen && sudo apt install thunar && sudo apt install rofi && sudo apt install i3blocks
 sudo apt install gnome-terminal
-sudo 
+
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
@@ -34,5 +34,10 @@ cp i3/config/* ~/.config/i3/
 cp .gtkrc-2.0 ~/.gtkrc-2.0 
 cp -r gtk-3.0 ~/.config/
 
+# Configurations for vim editor
+mkdir -p ~/.vimrc
+cp .vimrc ~/.vimrc 
+
 # Setting zsh environment
-# cp .zshrc ~/.zshrc
+# cp .zshrc ~/.zshrc 
+setup
