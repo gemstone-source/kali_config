@@ -1,7 +1,7 @@
 # i3 window manager
 This is dotfile configuration for clean installed linux, it has basically aimed to install and configure `i3 window manager environment`, some basics configurations for `vim` and the `.zshrc` for zsh.
 
-This srcipt has beeen tested on kali linux machine but it can be compatible with all debian family, feel free to customize it the way you like.
+This srcipt has been tested on kali linux machine but it can be compatible with all debian family, feel free to customize it the way you like.
 ## Usage 
 Clone this repository and then run the setup.sh script
 ```
