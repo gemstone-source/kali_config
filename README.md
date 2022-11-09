@@ -23,9 +23,6 @@ Replace `./pictures/05.jpg` with your wallpaper path.
 
 ## References.
 [rofi_advanced](https://github.com/adi1090x/rofi)
-
 [theme](https://software.opensuse.org/download.html?project=home%3AHorst3180&package=arc-theme)
-
 [fonts](https://github.com/supermarin/YosemiteSanFranciscoFont)
-
 [i3wm_official_site](https://i3wm.org/)
