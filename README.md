@@ -7,7 +7,7 @@ Clone this repository and then run the setup.sh script
 git clone https://github.com/gemstone-source/kali_config.git
 cd kali_config
 chmod +x setup.sh 
-./setup,sh
+./setup.sh
 ```
 ## Images after configuration
 ![image](pictures/i3.png)
