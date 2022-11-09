@@ -119,12 +119,12 @@ set $ws1 "1: Terminals"
 set $ws2 "2: Browsers"
 set $ws3 "3: Files"
 set $ws4 "4: Editors"
-set $ws5 "5"
+set $ws5 "5: VMachines"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: Videos"
 
 # switch to workspace
 bindsym $mod+1 workspace  $ws1
@@ -153,12 +153,13 @@ bindsym $mod+Shift+0 move container to workspace  $ws10
 #custom classes
 assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox-esr"] $ws2
+assign [class="Firefox Developer Edition"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="obsidian"] $ws4
 assign [class="Code"] $ws4
-assign [class="Sublime_text"] $ws5
+assign [class="Vmware"] $ws5
+assign [class="VirtualBox Manage"] $ws5
 assign [class="vlc"] $ws10
-
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
