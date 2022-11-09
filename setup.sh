@@ -42,3 +42,5 @@ unzip master.zip
 cd YosemiteSanFranciscoFont-master 
 mkdir ~/.fonts
 mv *.ttf ~/.fonts
+
+echo "Reboot your machine now and select i3 environment before you log in"
