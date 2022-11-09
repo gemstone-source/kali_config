@@ -3,8 +3,9 @@
 #install i3 
 sudo apt update 
 sudo apt install i3 && sudo apt install feh && sudo apt install arandr && sudo apt install lxappearance
-sudo apt install nitrogen && sudo apt install thunar && sudo apt install rofi
-
+sudo apt install nitrogen && sudo apt install thunar && sudo apt install rofi && sudo apt install i3blocks
+sudo apt install gnome-terminal
+sudo 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
@@ -26,7 +27,8 @@ mkdir ~/.fonts
 mv *.ttf ~/.fonts
 
 # Setting i3 config files
-cp i3/config i3/i3blocks.conf ~/.config/i3/
+mkdir -p ~/.config/i3
+cp i3/config/* ~/.config/i3/
 
 # Setting gtk themes
 cp .gtkrc-2.0 ~/.gtkrc-2.0 
