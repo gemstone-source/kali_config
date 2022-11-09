@@ -41,4 +41,3 @@ cp .vimrc ~/.vimrc
 
 # Setting zsh environment
 # cp .zshrc ~/.zshrc 
-setup
