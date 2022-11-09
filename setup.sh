@@ -44,4 +44,3 @@ mkdir ~/.fonts
 mv *.ttf ~/.fonts
 
 echo "Reboot your machine now and select i3 environment before you log in"
-echo "thea"
