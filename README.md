@@ -2,10 +2,11 @@
 This is dotfile configuration for clean linux installed it has basically aimed to install and configure i3 window manager environment and the srcipt has beeen tested on kali linux feel free to customize it the way you like.
 ## Usage 
 Clone this repository and then run the setup.sh script
-[image]
+
 ```
 git clone https://github.com/gemstone-source/kali_config.git
 cd kali_config
 chmod +x setup.sh 
 ./setup,sh
 ```
+![image](pictures/i3.png)
