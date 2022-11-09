@@ -17,6 +17,6 @@ chmod +x setup.sh
 ## Note 
 You can change wallpaper the way you want to and to do so just change this line from `i3/config` to the location where your wallpapers are
 ```
-exec --no-startup-id nitrogen  --set-auto  ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg --head=0 && nitrogen --set-auto ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg --head=1
+exec --no-startup-id nitrogen  --set-auto  ./pictures/05.jpg --head=0 && nitrogen --set-auto ./pictures/05.jpg --head=1
 ```
-Replace `~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg` with your wallpaper path.
+Replace `./pictures/05.jpg` with your wallpaper path.

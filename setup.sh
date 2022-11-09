@@ -9,6 +9,7 @@ sudo apt install gnome-terminal -y
 # Setting i3 config files
 mkdir ~/.config/i3
 cp i3/* ~/.config/i3/
+cp pictures -r ~/.config/i3 
 
 # Setting gtk themes
 touch ~/.gtkrc-2.0
