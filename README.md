@@ -9,4 +9,7 @@ cd kali_config
 chmod +x setup.sh 
 ./setup,sh
 ```
+Images after configuration
 ![image](pictures/i3.png)
+
+![image](pictures/i3wm.png)
