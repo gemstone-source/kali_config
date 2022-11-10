@@ -41,4 +41,4 @@ wget https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip
 unzip master.zip 
 mv YosemiteSanFranciscoFont-master/*.ttf ~/.fonts
 
-echo "Reboot your machine now and select i3 environment before you log in"
+echo "\nReboot your machine now and select i3 environment before you log in"
