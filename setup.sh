@@ -25,8 +25,7 @@ cp .vimrc ~/.vimrc
 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
+chmod +x rofi/setup.sh
 ./setup.sh
 mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
 
@@ -37,10 +36,9 @@ sudo apt update -y
 sudo apt install arc-theme -y
 
 # Download fonts
+mkdir ~/.fonts
 wget https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip 
 unzip master.zip 
-cd YosemiteSanFranciscoFont-master 
-mkdir ~/.fonts
-mv *.ttf ~/.fonts
+mv YosemiteSanFranciscoFont-master/*.ttf ~/.fonts
 
 echo "Reboot your machine now and select i3 environment before you log in"
