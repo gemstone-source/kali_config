@@ -239,5 +239,5 @@ bindsym XF86AudioPrev exec playerctl previous
 # Every startup 
 #exec_always feh --big-scale ~/Pictures/Wallpapers/300942.jpg
 #exec feh --randomize ~/Pictures/Wallpapers/*
-exec --no-startup-id nitrogen  --set-auto  --head=0 && nitrogen --set-auto ~/.config/i3/pictures/06.jpg --head=1
+exec --no-startup-id nitrogen  --set-auto ~/.config/i3/pictures/06.jpg  --head=0 && nitrogen --set-auto ~/.config/i3/pictures/06.jpg --head=1
 exec_always compton -f 
