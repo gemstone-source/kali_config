@@ -25,7 +25,8 @@ cp .vimrc ~/.vimrc
 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
-chmod +x rofi/setup.sh
+cd rofi
+chmod +x setup.sh
 ./setup.sh
 mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
 
@@ -36,6 +37,7 @@ sudo apt update -y
 sudo apt install arc-theme -y
 
 # Download fonts
+cd ..
 mkdir ~/.fonts
 wget https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip 
 unzip master.zip 
