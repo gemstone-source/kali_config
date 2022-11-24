@@ -13,14 +13,21 @@ chmod +x setup.sh
 ## Images after configuration
 ![image](pictures/08.png)
 
-![image](pictures/08.png)
-
 ## Note
 You can change wallpaper the way you want to and to do so just change this line from `i3/config` to the location where your wallpapers are
 ```
 exec --no-startup-id nitrogen  --set-auto  ~/.config/i3/pictures/06.jpg  --head=0 && nitrogen --set-auto ~/.config/i3/pictures/06.jpg  --head=1
 ```
-Replace `~/.config/i3/pictures/06.jpg ` with your wallpaper path.
+Replace `~/.config/i3/pictures/06.jpg ` with your wallpaper path or visit [goatfiles](https://github.com/goatfiles/wallpapers) for wallpapers and use the following script for random wallpapers genration.
+```
+#!/usr/bin/bash
+img=(`find ~/.wallpapers/wallpapers/wallpapers/ -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image' | cut -d':' -f1`)
+while true
+do
+   feh --bg-scale "${img[$RANDOM % ${#img[@]} ]}"
+sleep 30m
+done
+```
 
 Also visit [rofi_advanced](https://github.com/adi1090x/rofi) for more customization of `rofi`
 
@@ -32,3 +39,5 @@ Also visit [rofi_advanced](https://github.com/adi1090x/rofi) for more customizat
 [fonts](https://github.com/supermarin/YosemiteSanFranciscoFont)
 
 [i3wm_official_site](https://i3wm.org/)
+
+[wallpapers](https://github.com/goatfiles/wallpapers)
