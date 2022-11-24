@@ -121,10 +121,10 @@ set $ws3 "3: Files"
 set $ws4 "4: Editors"
 set $ws5 "5: VMachines"
 set $ws6 "6: Burpsuite"
-set $ws7 "7"
+set $ws7 "7: Videos"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10: Videos"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace  $ws1
