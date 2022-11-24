@@ -11,11 +11,11 @@ chmod +x setup.sh
 ./setup.sh
 ```
 ## Images after configuration
-![image](pictures/i3.png)
+![image](pictures/08.png)
 
-![image](pictures/i3wm.png)
+![image](pictures/08.png)
 
-## Note 
+## Note
 You can change wallpaper the way you want to and to do so just change this line from `i3/config` to the location where your wallpapers are
 ```
 exec --no-startup-id nitrogen  --set-auto  ~/.config/i3/pictures/06.jpg  --head=0 && nitrogen --set-auto ~/.config/i3/pictures/06.jpg  --head=1
