@@ -28,7 +28,12 @@ do
 sleep 30m
 done
 ```
-Create `~/.wallpapers` and add your wallpapers there in another folder named as `wallpapers` then save the above script inside it with name `auto-wall.sh`
+Create `~/.wallpapers` and add your wallpapers there in another folder named as `wallpapers` then save the above script inside it with name `auto-wall.sh`. This directory should be seems as follows:
+```
+┌──(gemstone㉿hashghost)-[~/.wallpapers]
+└─$ ls
+auto-wall.sh  wallpapers
+```
 
 Also visit [rofi_advanced](https://github.com/adi1090x/rofi) for more customization of `rofi`
 
