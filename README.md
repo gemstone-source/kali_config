@@ -28,7 +28,7 @@ do
 sleep 30m
 done
 ```
-Create `~/.wallpapers` and add your wallpapers there in another folder named as `wallpapers` then save the above script inside it with name `auto-wall.sh`. This directory should be seems as follows:
+Create `~/.wallpapers` and add your wallpapers there in another folder named as `wallpapers` then save the above script inside it with name `auto-wall.sh` then give the file execution permission. This directory should be seems as follows:
 ```
 ┌──(gemstone㉿hashghost)-[~/.wallpapers]
 └─$ ls
