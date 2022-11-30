@@ -21,13 +21,14 @@ exec --no-startup-id nitrogen  --set-auto  ~/.config/i3/pictures/06.jpg  --head=
 Replace `~/.config/i3/pictures/06.jpg ` with your wallpaper path or visit [goatfiles](https://github.com/goatfiles/wallpapers) for wallpapers and use the following script for random wallpapers genration.
 ```
 #!/usr/bin/bash
-img=(`find ~/.wallpapers/wallpapers/wallpapers/ -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image' | cut -d':' -f1`)
+img=(`find ~/.wallpapers/wallpapers/ -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image' | cut -d':' -f1`)
 while true
 do
    feh --bg-scale "${img[$RANDOM % ${#img[@]} ]}"
 sleep 30m
 done
 ```
+Create `~/.wallpapers` and add your wallpapers there in another folder named as `wallpapers` then save the above script inside it with name `auto-wall.sh`
 
 Also visit [rofi_advanced](https://github.com/adi1090x/rofi) for more customization of `rofi`
 
