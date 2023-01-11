@@ -6,8 +6,8 @@
 #
 
 # i3 gap
-gaps inner 8
-gaps outer 8
+gaps inner 5
+gaps outer 5
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -128,7 +128,7 @@ set $ws6 "6: Burpsuite"
 set $ws7 "7: Videos"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: Libre"
 
 # switch to workspace
 bindsym $mod+1 workspace  $ws1
@@ -165,6 +165,7 @@ assign [class="Vmware"] $ws5
 assign [class="VirtualBox Manage"] $ws5
 assign [class="burp-StartBurp"] $ws6
 assign [class="vlc"] $ws7
+assign [class="libreoffice-impress"] $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -248,7 +249,7 @@ bindsym XF86AudioPrev exec playerctl previous
 # Every startup 
 #exec_always feh --big-scale ~/Pictures/Wallpapers/300942.jpg
 #exec feh --randomize ~/Pictures/Wallpapers/*
-#exec --no-startup-id nitrogen  --set-auto  ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg --head=0 && nitrogen --set-auto ~/Pictures/Wallpapers/wallpaperflare.com_wallpaper.jpg --head=1
+#exec --no-startup-id nitrogen  --set-auto  ~/.config/i3/pictures/07.png --head=0 && nitrogen --set-auto ~/.config/i3/pictures/07.png --head=1
 
 exec_always compton -f 
-exec_always ~/.wallpapers/auto-wall.sh
+#exec_always ~/.wallpapers/auto-wall.sh
