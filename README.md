@@ -24,7 +24,7 @@ Replace `~/.config/i3/pictures/06.jpg ` with your wallpaper path or visit [goatf
 img=(`find ~/.wallpapers/wallpapers/ -name '*' -exec file {} \; | grep -o -P '^.+: \w+ image' | cut -d':' -f1`)
 while true
 do
-   feh --bg-scale "${img[$RANDOM % ${#img[@]} ]}"
+   feh --bg-scale "${img[$RANDOM % ${#img[@]} ]}n"
 sleep 30m
 done
 ```
