@@ -11,7 +11,7 @@ chmod +x setup.sh
 ./setup.sh
 ```
 ## Images after configuration
-![image](pictures/08.png)
+![image](pictures/09.png)
 
 ## Note
 You can change wallpaper the way you want to and to do so just change this line from `i3/config` to the location where your wallpapers are
