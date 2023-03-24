@@ -257,9 +257,10 @@ export PATH=$PATH:/home/gemstone/.local/bin
 
 #My alias
 alias shut='~/script/shutdown/shutdown.sh'
-alias burp='sudo ~/script/burp.sh'
+alias burp='~/script/burp.sh'
 alias ctf='~/script/ctf.sh'
 alias mac='sudo macchanger -m e4:54:e8:d6:6c:7a eth0'
 alias cutter='/opt/cutter/Cutter-v2.1.0-Linux-x86_64.AppImage'
 alias server='/home/gemstone/server/connection.sh'
 alias vol='/opt/volatility/volatility2'
+alias intellj='/opt/intellj/bin/idea.sh&'

@@ -4,6 +4,9 @@ set number
 "Set syntax on codes
 syntax on
 
+" Set tab space
+set expandtab shiftwidth=3 softtabstop=3
+
 "Enable auto indent
 set autoindent
 
@@ -21,3 +24,5 @@ function! ClosePair(char)
   endif
 endfunction
 
+"Set dollar sign at the end of the line 
+set list
