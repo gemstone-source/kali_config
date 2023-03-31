@@ -251,5 +251,6 @@ bindsym XF86AudioPrev exec playerctl previous
 #exec feh --randomize ~/Pictures/Wallpapers/*
 #exec --no-startup-id nitrogen  --set-auto  ~/.config/i3/pictures/07.png --head=0 && nitrogen --set-auto ~/.config/i3/pictures/07.png --head=1
 
+exec_always variety --resume
 exec_always compton -f 
 #exec_always ~/.wallpapers/auto-wall.sh
