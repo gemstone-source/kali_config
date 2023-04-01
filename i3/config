@@ -168,7 +168,6 @@ assign [class="vlc"] $ws7
 assign [class="kdenlive"] $ws8
 assign [class="obs"] $ws8
 
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
