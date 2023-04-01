@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 #install i3 
-sudo apt update 
+sudo apt update -y
 sudo apt install i3 -y && sudo apt install variety  -y && sudo apt install arandr -y && sudo apt install lxappearance -y
 sudo apt install nitrogen -y && sudo apt install thunar -y && sudo apt install rofi -y  && sudo apt install i3blocks -y
 sudo apt install gnome-terminal -y && sudo apt install compton -y && sudo apt install polybar -y && sudo apt install i3-gaps -y
