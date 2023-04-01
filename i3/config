@@ -3,6 +3,7 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
+#
 
 # i3 gap
 gaps inner 5
@@ -125,7 +126,7 @@ set $ws4 "4: Editors"
 set $ws5 "5: VMachines"
 set $ws6 "6: Burpsuite"
 set $ws7 "7: Videos"
-set $ws8 "8"
+set $ws8 "8: Kdenlive"
 set $ws9 "9"
 set $ws10 "10: Libre"
 
@@ -164,7 +165,9 @@ assign [class="Vmware"] $ws5
 assign [class="VirtualBox Manage"] $ws5
 assign [class="burp-StartBurp"] $ws6
 assign [class="vlc"] $ws7
-assign [class="libreoffice-impress"] $ws10
+assign [class="kdenlive"] $ws8
+assign [class="obs"] $ws8
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
