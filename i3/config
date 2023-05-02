@@ -16,7 +16,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Iosevka 14  
+font pango: Iosevka 0  
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -176,8 +176,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
-mode "resize" 
-{
+mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
         # Pressing left will shrink the window’s width.
@@ -204,19 +203,19 @@ mode "resize"
 bindsym $mod+r mode "resize"
 
 # colors variables
-set $bg-color			#535556
-set $inactive-bg-color		#2f343f		
+set $bg-color			#3cb12a
+set $inactive-bg-color		#0f0430		
 set $text-color     		#ffffff
 set $inactive-text-color	#090a0b
 set $urgent-bg-color            #E53935 
 
 
 # window colors
-# 		    	      border 		    background	          text    	          indicator
-client.focused      	      $bg-color             $bg-color             $text-color	          #46595b
-#client.unfocused    	      $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color   #00ff00
-#client.focused_inactive      $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color   #00ff00
-#client.urgent                $urgent-bg-color      $urgent-bg-color      $text-color             #00ff00
+# 		    	                  border 		           background	          text    	               indicator
+client.focused      	        $bg-color             $bg-color             $text-color	            #46595b
+#client.unfocused    	       $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color    #00ff00
+#client.focused_inactive      $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color    #00ff00
+#client.urgent                $urgent-bg-color      $urgent-bg-color      $text-color              #00ff00
 
 #if you do want the borders you can uncomment this line
 #hide_edge_borders both 
