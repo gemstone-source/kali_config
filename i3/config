@@ -134,6 +134,7 @@ assign [class="Gnome-terminal"] $ws1
 assign [class="Firefox-esr"] $ws2
 assign [class="Firefox Developer Edition"] $ws2
 assign [class="Thunar"] $ws3
+assign [class="org.gnome.Nautilus"]$ws3
 assign [class="obsidian"] $ws4
 assign [class="Code"] $ws4
 assign [class="Vmware"] $ws5
@@ -189,7 +190,7 @@ set $statusline                 #282A3E
 
 # window colors
 #                             border                background            text                     indicator
-client.focused                $bg-color             $bg-color             $text-color              #82c8ff #82c8ff #dddddd
+client.focused                $bg-color             $bg-color             $text-color              #00ff00
 client.unfocused              $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color    #00ff00
 client.focused_inactive       $iniactive-bg-color   $iniactive-bg-color   $iniactive-text-color    #00ff00
 client.urgent                 $urgent-bg-color      $urgent-bg-color      $text-color              #00ff00
