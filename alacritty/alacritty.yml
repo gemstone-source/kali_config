@@ -15,9 +15,9 @@
 window:
   # Window dimensions (changes require restart)
   #
+  opacity: 0.9
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  opacity: 0.5
   dimensions:
     columns: 0
     lines: 0
@@ -115,7 +115,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 16
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
