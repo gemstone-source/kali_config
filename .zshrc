@@ -271,3 +271,5 @@ alias burp='/opt/burspsuite/burp.sh'
 
 
 export PATH=$PATH:/home/hashghost/nodejs/bin
+eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/powerline.omp.json )"
+fpath+=${ZDOTDIR:-~}/.zsh_functions
