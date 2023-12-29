@@ -25,7 +25,15 @@ touch ~/.vimrc
 cp .vimrc ~/.vimrc 
 
 # Setting zsh environment
-# cp .zshrc ~/.zshrc 
+cp .zshrc ~/.zshrc 
+
+# Install Alacritty Terminal
+wget https://github.com/barnumbirr/alacritty-debian/releases/download/v0.10.0-rc4-1/alacritty_0.10.0-rc4-1_amd64_bullseye.deb
+sudo dpkg -i alacritty_0.10.0-rc4-1_amd64_bullseye.deb
+sudo apt install -f
+
+mkdir -p ~/.config/alacritty
+cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
@@ -33,12 +41,6 @@ cd rofi
 chmod +x setup.sh
 ./setup.sh
 mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
-
-# Download arc-themes
-# echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/Debian_8.0/ /' | sudo tee /etc/apt/sources.list.d/home:Horst3180.list
-# curl -fsSL https://download.opensuse.org/repositories/home:Horst3180/Debian_8.0/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_Horst3180.gpg > /dev/null
-# sudo apt update -y
-# sudo apt install arc-theme -y
 
 # Download fonts
 cd ..
