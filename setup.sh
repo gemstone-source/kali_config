@@ -15,6 +15,9 @@ cp pictures -r ~/.config/i3
 mkdir ~/.config/polybar
 cp -r polybar ~/.config/
 
+# Setting oh-my-posh
+curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+
 # Setting gtk themes
 # touch ~/.gtkrc-2.0
 # cp .gtkrc-2.0 ~/.gtkrc-2.0 
@@ -22,10 +25,10 @@ cp -r polybar ~/.config/
 
 # Configurations for vim editor
 touch ~/.vimrc
-cp .vimrc ~/.vimrc 
+cp .vimrc ~/.vimrc && sudo cp .vimrc /root
 
 # Setting zsh environment
-cp .zshrc ~/.zshrc 
+cp .zshrc ~/.zshrc  && sudo cp .zshrc /root
 
 # Install Alacritty Terminal
 wget https://github.com/barnumbirr/alacritty-debian/releases/download/v0.10.0-rc4-1/alacritty_0.10.0-rc4-1_amd64_bullseye.deb
