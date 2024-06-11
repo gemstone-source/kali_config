@@ -131,8 +131,8 @@ bindsym $mod+Shift+0 move container to workspace  $ws10
 
 #custom classes
 assign [class="Alacritty"] $ws1
-assign [class="Firefox-esr"] $ws2
-assign [class="Firefox Developer Edition"] $ws2
+assign [class="firefox-esr"] $ws2
+assign [class="firefox-aurora"] $ws2
 assign [class="Thunar"] $ws3
 assign [class="org.gnome.Nautilus"]$ws3
 assign [class="obsidian"] $ws4
@@ -142,6 +142,7 @@ assign [class="VirtualBox Manage"] $ws5
 assign [class="burp-StartBurp"] $ws6
 assign [class="vlc"] $ws7
 assign [class="kdenlive"] $ws8
+assign [class="Spotify"] $ws8
 assign [class="obs"] $ws8
 
 # reload the configuration file
