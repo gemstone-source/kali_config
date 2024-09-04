@@ -40,7 +40,7 @@ cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 # Rofi setup
 git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
+cd rofiN
 chmod +x setup.sh
 ./setup.sh
 mv ~/.config/rofi/config.rasi  ~/.config/rofi/config

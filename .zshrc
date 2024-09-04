@@ -267,7 +267,9 @@ alias vol='/opt/volatility/volatility2'
 alias intellj='/opt/intellj/bin/idea.sh'
 alias kdenlive='/opt/kdenlive/kdenlive 2>/dev/null'
 alias ctf='~/script/ctf/ctf.sh'
-alias burp='/opt/burspsuite/burp.sh'
+alias burp='~/script/burpsuite.sh'
+alias adbon="adb shell settings put global http_proxy $(ifconfig | grep wlan0 -A 5 | head -n 2| tail -n 1| awk '{print $2 }')"
+alias adboff='adb shell settings put global http_proxy :0'
 
 
 export PATH=$PATH:/home/hashghost/nodejs/bin
