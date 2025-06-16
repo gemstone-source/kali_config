@@ -1,6 +1,13 @@
 # ~/.zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
+# Fix $TERM for GNOME Terminal + tmux
+if [[ -n "$TMUX" ]]; then
+  export TERM="tmux-256color"  # Inside tmux
+else
+  export TERM="xterm-256color" # Outside tmux (GNOME Terminal)
+fi
+
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -271,7 +278,3 @@ alias burp='~/script/burpsuite.sh'
 alias adbon="adb shell settings put global http_proxy $(ifconfig | grep wlan0 -A 5 | head -n 2| tail -n 1| awk '{print $2 }')"
 alias adboff='adb shell settings put global http_proxy :0'
 
-
-export PATH=$PATH:/home/hashghost/nodejs/bin
-eval "$(oh-my-posh init zsh --config ~/.cache/oh-my-posh/themes/powerline.omp.json )"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
