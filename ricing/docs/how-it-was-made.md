@@ -35,7 +35,7 @@ Apps are pinned to fixed workspaces:
 | 2 | browsers |
 | 3 | file managers |
 | 4 | notes / editors / Obsidian |
-| 5 | Burp Suite |
+| 5 | Spotify |
 
 Four themes ship with it: `gemstone` (default), `tokyo-night`,
 `catppuccin-mocha`, `everforest`.

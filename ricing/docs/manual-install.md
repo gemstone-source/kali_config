@@ -16,7 +16,7 @@ The result is:
 - Hyprland as the Wayland window manager.
 - Quickshell as the top bar and static wallpaper layer.
 - Foot, Wofi, Dunst, Neovim, and Zsh as the main desktop tools.
-- Fixed workspace rules for terminals, browsers, file managers, editors, and Burp Suite.
+- Fixed workspace rules for terminals, browsers, file managers, editors, and Spotify.
 - A single `rice` theme command that regenerates application colors.
 
 ## 1. Update Kali
@@ -494,7 +494,7 @@ launcher. Use `hyprctl clients` to discover a class that is not listed here.
 --   workspace 2: browsers
 --   workspace 3: file managers
 --   workspace 4: notes, code editors, obsidian
---   workspace 5: burpsuite
+--   workspace 5: Spotify
 
 -- --- Workspace 1: terminals ---
 hl.window_rule({ match = { class = "^(foot|alacritty|kitty|wezterm|gnome-terminal-server)$" }, workspace = "1" })
@@ -505,13 +505,13 @@ hl.window_rule({ match = { class = "^(foot|alacritty|kitty|wezterm|gnome-termina
 hl.window_rule({ match = { class = "^(firefox|firefox-esr|firefox-developer-edition|firefox-nightly|chromium|chromium-browser|google-chrome|google-chrome-beta|google-chrome-unstable|brave-browser|brave-browser-nightly|librewolf|microsoft-edge|microsoft-edge-dev|vivaldi|vivaldi-stable|opera|opera-developer|waterfox|floorp|zen|qutebrowser|thorium-browser)$" }, workspace = "2" })
 
 -- --- Workspace 3: file managers ---
-hl.window_rule({ match = { class = "^(org.gnome.Nautilus|thunar|pcmanfm|nemo)$" }, workspace = "3" })
+hl.window_rule({ match = { class = "^(org.gnome.Nautilus|dolphin|org.kde.dolphin|thunar|pcmanfm|nemo)$" }, workspace = "3" })
 
 -- --- Workspace 4: notes, editors, obsidian ---
 hl.window_rule({ match = { class = "^(obsidian|code|code-oss|code-url-handler|codium|sublime_text|gedit)$" }, workspace = "4" })
 
--- --- Workspace 5: burpsuite ---
-hl.window_rule({ match = { class = "^(burpsuite|BurpSuiteCommunity|BurpSuiteProfessional|burp)$" }, workspace = "5" })
+-- --- Workspace 5: Spotify ---
+hl.window_rule({ match = { class = "^(spotify|Spotify|com.spotify.Client)$" }, workspace = "5" })
 ```
 
 ### `~/.config/hypr/bindings.lua`

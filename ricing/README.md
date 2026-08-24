@@ -22,7 +22,7 @@ It recreates the Omarchy look and workflow on Kali using the same core stack:
 - **Static anime wallpapers**: Naruto, Sakamoto Days, One-Punch Man, Solo
   Leveling, and Arcane rotate every five minutes
 - **App → workspace pinning**: terminals→1, browsers→2, file managers→3,
-  notes/editors/Obsidian→4, Burp Suite→5
+  notes/editors/Obsidian→4, Spotify→5
 - **4 curated themes**: `gemstone` (default), `tokyo-night`, `catppuccin-mocha`, `everforest`
 - A small **`rice` CLI** that themes every app at once (foot, nvim, dunst, wofi,
   Quickshell, starship, fastfetch, hyprlock, waybar)
