@@ -8,6 +8,8 @@ waybar
 polkitd
 hyprpolkitagent
 pamixer
+open-vm-tools
+open-vm-tools-desktop
 
 # Terminal & shell
 foot

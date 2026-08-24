@@ -61,6 +61,13 @@ sudo apt install -y \
     waybar
 ```
 
+Install VMware integration so the guest display follows host window and
+fullscreen changes:
+
+```bash
+sudo apt install -y open-vm-tools open-vm-tools-desktop
+```
+
 Install the terminal, shell, launcher, notifications, and editor:
 
 ```bash
@@ -465,6 +472,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("udiskie -t")
     hl.exec_cmd("hyprpolkitagent")
     hl.exec_cmd("env QT_QUICK_BACKEND=software QT_QPA_PLATFORMTHEME=gtk3 quickshell")
+    -- VMware's user agent handles display resize events after host fullscreen changes.
+    hl.exec_cmd("if command -v vmware-user-suid-wrapper >/dev/null 2>&1; then vmware-user-suid-wrapper; fi")
 end)
 ```
 
@@ -1807,9 +1816,13 @@ edit the `wallpapers` list in that file and restart Quickshell.
 Run Quickshell with software rendering:
 
 ```bash
+command -v vmware-user-suid-wrapper
+vmware-user-suid-wrapper
 ```
 
-The same environment is already present in `autostart.lua`.
+The same agent is started automatically by `autostart.lua`; it is required for
+VMware to deliver display resize events when the host enters or leaves
+fullscreen.
 
 ### The pointer is invisible or duplicated
 
