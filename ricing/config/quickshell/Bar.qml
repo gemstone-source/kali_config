@@ -23,24 +23,36 @@ Scope {
                 color: Colors.bgAlt
             }
 
-            RowLayout {
+            Item {
                 anchors.fill: parent
                 anchors.leftMargin: 14
                 anchors.rightMargin: 14
-                spacing: 8
 
                 Workspaces {
+                    id: workspaces
                     screen: modelData
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
                 ActiveWindow {
-                    Layout.fillWidth: true
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    width: Math.max(0, parent.width -
+                        (2 * Math.max(workspaces.width, rightModules.width)) - 24)
                 }
 
-                Media {}
-                Tray { panel: bar }
-                Stats {}
-                Clock {}
+                Row {
+                    id: rightModules
+                    anchors.right: parent.right
+                    anchors.verticalCenter: parent.verticalCenter
+                    spacing: 12
+
+                    Media {}
+                    Tray { panel: bar }
+                    Stats {}
+                    Clock {}
+                }
             }
         }
     }
