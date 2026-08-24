@@ -1,0 +1,10 @@
+# Generated theme files (rendered by `rice theme set` into ~/.config)
+.config/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# QML LSP managed file
+.qmlls.ini

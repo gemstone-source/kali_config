@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# rice-stats — one-line status for the Quickshell bar: CPU%, RAM%, and IP.
+# Shows the eth0 IP when tun0 (VPN) is not connected; otherwise shows tun0.
+set -euo pipefail
+
+ip_of() {
+  ip -4 -o addr show "$1" 2>/dev/null | awk '{print $4}' | cut -d/ -f1 | head -1
+}
+
+iface_up() {
+  ip link show "$1" up >/dev/null 2>&1 && [ -n "$(ip_of "$1")" ]
+}
+
+cpu_pct() {
+  local a b di dt
+  read -r -a a < <(awk '/^cpu /{for(i=2;i<=NF;i++){t+=$i; if(i==5||i==6) id+=$i} printf "%d %d", id, t}' /proc/stat)
+  sleep 0.4
+  read -r -a b < <(awk '/^cpu /{for(i=2;i<=NF;i++){t+=$i; if(i==5||i==6) id+=$i} printf "%d %d", id, t}' /proc/stat)
+  di=$((b[0] - a[0]))
+  dt=$((b[1] - a[1]))
+  if [ "$dt" -gt 0 ]; then printf '%d' $((100 - (di * 100 / dt))); else printf '0'; fi
+}
+
+ram_pct() {
+  awk '/MemTotal/{t=$2} /MemAvailable/{a=$2} END{if(t) printf "%d", 100 - (a * 100 / t)}' /proc/meminfo
+}
+
+CPU="$(cpu_pct)"
+RAM="$(ram_pct)"
+
+if iface_up tun0; then
+  IF="tun0"
+else
+  IF="eth0"
+fi
+IP="$(ip_of "$IF")"
+
+printf 'CPU %s%% · RAM %s%%' "$CPU" "$RAM"
+if [ -n "$IP" ]; then
+  printf ' · %s %s' "$IF" "$IP"
+fi
+printf '\n'

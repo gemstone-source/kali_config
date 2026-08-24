@@ -1,0 +1,26 @@
+palette = "riceshell"
+
+[palettes.riceshell]
+bg = "#@bg@"
+fg = "#@fg@"
+accent = "#@accent@"
+red = "#@red@"
+green = "#@green@"
+yellow = "#@yellow@"
+blue = "#@blue@"
+magenta = "#@magenta@"
+cyan = "#@cyan@"
+
+[directory]
+style = "bold accent"
+truncation_length = 3
+
+[git_branch]
+style = "magenta"
+
+[git_status]
+style = "green"
+
+[character]
+success_symbol = "[❯](bold accent)"
+error_symbol = "[❯](bold red)"

@@ -1,0 +1,8 @@
+width=600
+height=380
+prompt=❯
+mode=drun
+allow_markup=true
+allow_images=false
+insensitive=true
+term=foot

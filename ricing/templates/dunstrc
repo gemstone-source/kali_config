@@ -1,0 +1,36 @@
+[global]
+    font = JetBrainsMono Nerd Font 11
+    origin = top-right
+    offset = 10x10
+    corner_radius = 10
+    frame_color = "#@border@"
+    background = "#@bg_alt@"
+    foreground = "#@fg@"
+    frame_width = 2
+    padding = 12
+    horizontal_padding = 12
+    max_icon_size = 48
+    separator_color = frame
+    icon_position = left
+    format = "<b>%s</b>\n%b"
+    word_wrap = yes
+
+[urgency_low]
+    background = "#@bg_alt@"
+    foreground = "#@fg_dim@"
+    timeout = 4
+
+[urgency_normal]
+    background = "#@bg_alt@"
+    foreground = "#@fg@"
+    timeout = 6
+
+[urgency_critical]
+    background = "#@red@"
+    foreground = "#@accent_fg@"
+    timeout = 0
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave

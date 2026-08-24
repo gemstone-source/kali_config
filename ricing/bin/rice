@@ -1,0 +1,144 @@
+#!/usr/bin/env bash
+# rice — Omarchy-style theme & helper CLI for Kali/Hyprland
+set -euo pipefail
+
+SOURCE="${BASH_SOURCE[0]}"
+while [ -L "$SOURCE" ]; do
+  DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
+  SOURCE="$(readlink "$SOURCE")"
+  case "$SOURCE" in
+    /*) ;;
+    *) SOURCE="$DIR/$SOURCE" ;;
+  esac
+done
+BIN_DIR="$(cd -P "$(dirname "$SOURCE")" >/dev/null 2>&1 && pwd)"
+RICE_ROOT="$(dirname "$BIN_DIR")"
+
+THEMES_DIR="$RICE_ROOT/themes"
+TEMPLATES_DIR="$RICE_ROOT/templates"
+CONFIG="$HOME/.config"
+STATE_DIR="$CONFIG/riceshell"
+STATE_FILE="$STATE_DIR/theme"
+
+usage() {
+  cat <<'EOF'
+rice — Omarchy-style rice helper for Kali
+
+Usage:
+  rice theme list             List available themes
+  rice theme current          Show the active theme
+  rice theme set <name>       Apply a theme (regenerates all themed configs)
+  rice screenshot             Take a screenshot (grim) and copy to clipboard
+  rice update                 git pull + reapply current theme
+  rice help                   Show this help
+
+Themes are stored in themes/<name>/colors.toml.
+EOF
+}
+
+color_val() {
+  local file="$1" key="$2" v
+  v="$(grep -E "^[[:space:]]*${key}[[:space:]]*=" "$file" | head -n1 | sed -E 's/.*=[[:space:]]*"([^"]*)".*/\1/')"
+  printf '%s' "$v"
+}
+
+render() {
+  local tpl="$1" out="$2" key val tmp
+  tmp="$(mktemp)"
+  cp "$tpl" "$tmp"
+  while IFS= read -r line; do
+    [[ "$line" =~ ^[[:space:]]*([a-z0-9_]+)[[:space:]]*= ]] || continue
+    key="${BASH_REMATCH[1]}"
+    val="$(color_val "$COLORS_FILE" "$key")"
+    sed -i "s|@${key}@|${val}|g" "$tmp"
+  done < "$COLORS_FILE"
+  sed -i "s|@theme@|${THEME_NAME}|g" "$tmp"
+  mkdir -p "$(dirname "$out")"
+  mv "$tmp" "$out"
+}
+
+theme_list() {
+  local d
+  for d in "$THEMES_DIR"/*; do
+    [ -d "$d" ] || continue
+    [ -f "$d/colors.toml" ] || continue
+    printf '%s\n' "$(basename "$d")"
+  done
+}
+
+theme_current() {
+  if [ -f "$STATE_FILE" ]; then
+    cat "$STATE_FILE"
+  else
+    echo "gemstone"
+  fi
+}
+
+theme_set() {
+  local name="$1" colors
+  colors="$THEMES_DIR/$name/colors.toml"
+  if [ ! -f "$colors" ]; then
+    echo "error: theme '$name' not found" >&2
+    echo "available themes:" >&2
+    theme_list >&2
+    exit 1
+  fi
+
+  COLORS_FILE="$colors"
+  THEME_NAME="$name"
+
+  render "$TEMPLATES_DIR/foot.ini" "$CONFIG/foot/foot.ini"
+  render "$TEMPLATES_DIR/neovim-theme.lua" "$CONFIG/nvim/lua/theme.lua"
+  render "$TEMPLATES_DIR/dunstrc" "$CONFIG/dunst/dunstrc"
+  render "$TEMPLATES_DIR/wofi-style.css" "$CONFIG/wofi/style.css"
+  render "$TEMPLATES_DIR/quickshell-colors.qml" "$CONFIG/quickshell/Colors.qml"
+  render "$TEMPLATES_DIR/starship.toml" "$CONFIG/starship.toml"
+  render "$TEMPLATES_DIR/fastfetch.jsonc" "$CONFIG/fastfetch/config.jsonc"
+  render "$TEMPLATES_DIR/hyprland-theme.lua" "$CONFIG/hypr/theme.lua"
+  render "$TEMPLATES_DIR/hyprlock.conf" "$CONFIG/hypr/hyprlock.conf"
+  render "$TEMPLATES_DIR/waybar-style.css" "$CONFIG/waybar/style.css"
+
+  mkdir -p "$STATE_DIR"
+  printf '%s\n' "$name" > "$STATE_FILE"
+
+  echo "theme set to '$name'"
+  echo "reload hyprland (hyprctl reload) to apply border/wallpaper changes"
+}
+
+screenshot() {
+  local dir="$HOME/Pictures/screenshots" name
+  mkdir -p "$dir"
+  name="$dir/$(date +%Y-%m-%d_%H-%M-%S).png"
+  grim "$name"
+  wl-copy < "$name"
+  echo "saved: $name (copied to clipboard)"
+}
+
+update() {
+  if git -C "$RICE_ROOT" remote -v 2>/dev/null | grep -q .; then
+    git -C "$RICE_ROOT" pull --rebase
+  else
+    echo "no git remote configured; skipping pull"
+  fi
+  theme_set "$(theme_current)"
+  echo "updated and re-applied theme '$(theme_current)'"
+}
+
+main() {
+  case "${1:-help}" in
+    theme)
+      case "${2:-}" in
+        list) theme_list ;;
+        current) theme_current ;;
+        set) theme_set "${3:?usage: rice theme set <name>}" ;;
+        *) usage ;;
+      esac
+      ;;
+    screenshot) screenshot ;;
+    update) update ;;
+    help|-h|--help) usage ;;
+    *) usage ;;
+  esac
+}
+
+main "$@"

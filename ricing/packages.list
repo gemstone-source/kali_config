@@ -1,0 +1,70 @@
+# Core desktop (Hyprland + Quickshell, Omarchy-style)
+hyprland
+hyprland-guiutils
+quickshell
+xdg-desktop-portal-hyprland
+xdg-desktop-portal-gtk
+waybar
+polkitd
+hyprpolkitagent
+pamixer
+
+# Terminal & shell
+foot
+zsh
+starship
+fzf
+fastfetch
+bat
+eza
+zoxide
+ripgrep
+fd-find
+tmux
+
+# Launcher & notifications
+wofi
+dunst
+
+# Editor
+neovim
+
+# Wallpaper, screenshots, lock, idle
+hyprlock
+hypridle
+grim
+slurp
+flameshot
+wl-clipboard
+imagemagick
+wlogout
+
+# Audio / media
+pipewire
+wireplumber
+playerctl
+brightnessctl
+
+# System tray & automount
+network-manager-applet
+udiskie
+bluez
+bluez-tools
+blueman
+
+# Utilities
+jq
+qrencode
+socat
+inotify-tools
+unzip
+whois
+tesseract-ocr
+libnotify-bin
+
+# Fonts & icons
+fonts-noto
+fonts-noto-cjk
+fonts-noto-color-emoji
+fonts-jetbrains-mono
+papirus-icon-theme

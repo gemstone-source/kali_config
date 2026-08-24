@@ -1,0 +1,27 @@
+[colors]
+# Midnight violet — the default "gemstone" theme
+bg = "0e0e16"
+bg_alt = "15151f"
+fg = "e2e2ea"
+fg_dim = "6c6c85"
+border = "2a2a3d"
+accent = "a78bfa"
+accent_fg = "0e0e16"
+
+black = "1a1a2a"
+red = "ff6b6b"
+green = "9ff28b"
+yellow = "f4d97c"
+blue = "7aa2f7"
+magenta = "c792ea"
+cyan = "7de8e8"
+white = "e2e2ea"
+
+brblack = "34344a"
+brred = "ff8a8a"
+brgreen = "b5ffa3"
+bryellow = "ffe08a"
+brblue = "8ab4ff"
+brmagenta = "d8a8ff"
+brcyan = "99ffff"
+brwhite = "ffffff"

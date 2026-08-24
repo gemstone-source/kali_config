@@ -1,0 +1,27 @@
+[colors]
+# Everforest Dark
+bg = "2b3339"
+bg_alt = "232a2e"
+fg = "d3c6aa"
+fg_dim = "7a8478"
+border = "4b565c"
+accent = "a7c080"
+accent_fg = "2b3339"
+
+black = "4b565c"
+red = "e67e80"
+green = "a7c080"
+yellow = "dbbc7f"
+blue = "7fbbb3"
+magenta = "d699b6"
+cyan = "83c092"
+white = "d3c6aa"
+
+brblack = "4b565c"
+brred = "e67e80"
+brgreen = "a7c080"
+bryellow = "dbbc7f"
+brblue = "7fbbb3"
+brmagenta = "d699b6"
+brcyan = "83c092"
+brwhite = "e6e2cc"
