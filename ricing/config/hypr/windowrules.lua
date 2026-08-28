@@ -27,3 +27,6 @@ hl.window_rule({ match = { class = "^(obsidian|code|code-oss|code-url-handler|co
 
 -- --- Workspace 5: Spotify ---
 hl.window_rule({ match = { class = "^(spotify|Spotify|com.spotify.Client)$" }, workspace = "5" })
+
+-- --- Workspace 6: Burp Suite ---
+hl.window_rule({ match = { class = "^install4j-burp-StartBurp$" }, workspace = "6" })

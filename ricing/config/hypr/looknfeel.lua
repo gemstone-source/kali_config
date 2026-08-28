@@ -41,6 +41,10 @@ hl.config({
         smart_resizing = true,
     },
 
+    xwayland = {
+        enabled = true,
+    },
+
     misc = {
         disable_hyprland_logo = true,
         disable_splash_rendering = true,
