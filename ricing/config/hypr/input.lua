@@ -29,4 +29,16 @@ hl.config({
         -- Force software cursor rendering for VMware compatibility.
         no_hardware_cursors = 1,
     },
+
+    device = {
+        ["virtualps/2-vmware-vmmouse"] = {
+            enabled = false,
+        },
+        ["virtualps/2-vmware-vmmouse-1"] = {
+            enabled = false,
+        },
+        ["vmware-dnd-uinput-pointer"] = {
+            enabled = false,
+        },
+    },
 })

@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
+set -u
 
-# Terminate already running bar instances
-# If all your bars have ipc enabled, you can use 
-polybar-msg cmd quit
-# Otherwise you can use the nuclear option:
-# killall -q polybar
+config="$HOME/.config/polybar/config.ini"
+log_dir="${XDG_STATE_HOME:-$HOME/.local/state}/polybar"
 
-# Launch bar1 and bar2
-echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
-polybar left 2>&1 | tee -a /tmp/polybar1.log & disown
-polybar center 2>&1 | tee -a /tmp/polybar2.log & disown
-polybar right 2>&1 | tee -a /tmp/polybar3.log & disown
-polybar traay 2>&1 | tee -a /tmp/polybar4.log & disown
-echo "Bars launched..."
+mkdir -p "$log_dir"
+
+# exec_always runs this script again after every i3 reload.
+if command -v polybar-msg >/dev/null 2>&1; then
+    polybar-msg cmd quit >/dev/null 2>&1 || true
+else
+    pkill -x polybar >/dev/null 2>&1 || true
+fi
+
+for bar in main; do
+    polybar -c "$config" "$bar" >"$log_dir/$bar.log" 2>&1 &
+done

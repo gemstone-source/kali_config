@@ -1,65 +1,52 @@
-#!/bin/bash 
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-#install i3 
-sudo apt update -y
-sudo apt install i3 -y && sudo apt install variety  -y && sudo apt install arandr -y && sudo apt install lxappearance -y && sudo apt install thunar -y && sudo apt install rofi -y  && sudo apt install i3blocks -y && 
-sudo apt install gnome-terminal -y && sudo apt install compton -y && sudo apt install polybar -y
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 
-# Setting i3 config files
-mkdir ~/.config/i3
-cp i3/* ~/.config/i3/
-cp pictures -r ~/.config/i3 
+sudo apt-get update
+sudo apt-get install -y \
+    alacritty arandr brightnessctl dex i3 i3blocks i3lock lxappearance \
+    flameshot network-manager-gnome picom playerctl polybar rofi thunar variety \
+    wireplumber pipewire-bin xss-lock
 
-# Setting polybar
-mkdir ~/.config/polybar
-cp -r polybar ~/.config/
+install -d "$HOME/.config/i3" "$HOME/.config/polybar" "$HOME/.config/alacritty" "$HOME/.config/gtk-3.0" "$HOME/.local/bin"
+install -m 644 "$SCRIPT_DIR/i3/config" "$HOME/.config/i3/config"
+install -m 644 "$SCRIPT_DIR/i3/i3blocks.conf" "$HOME/.config/i3/i3blocks.conf"
+install -m 644 "$SCRIPT_DIR/polybar/config.ini" "$HOME/.config/polybar/config.ini"
+install -m 755 "$SCRIPT_DIR/polybar/launch.sh" "$HOME/.config/polybar/launch.sh"
+install -m 644 "$SCRIPT_DIR/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+install -d "$HOME/.config/picom"
+install -m 644 "$SCRIPT_DIR/picom/picom.conf" "$HOME/.config/picom/picom.conf"
+install -m 755 "$SCRIPT_DIR/scripts/rofi-launcher.sh" "$HOME/.local/bin/kali-rofi-launcher"
+install -m 755 "$SCRIPT_DIR/scripts/powermenu.sh" "$HOME/.local/bin/kali-rofi-powermenu"
+install -m 755 "$SCRIPT_DIR/scripts/flameshot-x11.sh" "$HOME/.local/bin/kali-flameshot"
+install -m 644 "$SCRIPT_DIR/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+install -m 644 "$SCRIPT_DIR/gtk-3.0/bookmarks" "$HOME/.config/gtk-3.0/bookmarks"
+install -d "$HOME/.config/i3/pictures"
+install -m 644 "$SCRIPT_DIR/pictures"/* "$HOME/.config/i3/pictures/"
 
-# Setting oh-my-posh
-# curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+# Keep IBus available for input methods without placing its layout indicator in
+# Polybar's system tray.
+if command -v gsettings >/dev/null 2>&1; then
+    gsettings set org.freedesktop.ibus.panel show-icon-on-systray false || true
+fi
 
-# Setting gtk themes
-# touch ~/.gtkrc-2.0
-# cp .gtkrc-2.0 ~/.gtkrc-2.0 
-# cp  gtk-3.0/* ~/.config/
+install -m 644 "$REPO_ROOT/.vimrc" "$HOME/.vimrc"
+install -m 644 "$REPO_ROOT/.zshrc" "$HOME/.zshrc"
 
-# Configurations for vim editor
-touch ~/.vimrc
-cp .vimrc ~/.vimrc && sudo cp .vimrc /root
+# The Rofi theme directory is intentionally ignored by this repository because
+# it contains a separately maintained upstream theme collection.
+if [[ -x "$SCRIPT_DIR/rofi/setup.sh" ]]; then
+    (
+        cd "$SCRIPT_DIR/rofi"
+        ./setup.sh
+    )
+    if [[ -f "$HOME/.config/rofi/config.rasi" ]]; then
+        mv "$HOME/.config/rofi/config.rasi" "$HOME/.config/rofi/config"
+    fi
+else
+    printf '%s\n' 'Rofi theme files are not present; using the packaged Rofi configuration.' >&2
+fi
 
-# Setting zsh environment
-cp .zshrc ~/.zshrc  && sudo cp .zshrc /root
-
-# Install Alacritty Terminal
-wget https://github.com/barnumbirr/alacritty-debian/releases/download/v0.10.0-rc4-1/alacritty_0.10.0-rc4-1_amd64_bullseye.deb
-sudo dpkg -i alacritty_0.10.0-rc4-1_amd64_bullseye.deb
-sudo apt install -f
-
-mkdir -p ~/.config/alacritty
-cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-
-# Rofi setup
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
-./setup.sh
-mv ~/.config/rofi/config.rasi  ~/.config/rofi/config
-
-# Download fonts
-cd ..
-# mkdir ~/.fonts
-# wget https://github.com/supermarin/YosemiteSanFranciscoFont/archive/master.zip 
-# unzip master.zip 
-# mv YosemiteSanFranciscoFont-master/*.ttf ~/.fonts
-
-# Touchpad settings
-sudo mkdir -p /etc/X11/xorg.conf.d && sudo tee <<'EOF' /etc/X11/xorg.conf.d/90-touchpad.conf 1> /dev/null
-Section "InputClass"
-        Identifier "touchpad"
-        MatchIsTouchpad "on"
-        Driver "libinput"
-        Option "Tapping" "on"
-EndSection
-
-EOF
-
-printf "\nReboot your machine now and select i3 environment before you log in"
+printf '%s\n' 'i3 configuration installed. Select i3 at the login screen or restart the session.'

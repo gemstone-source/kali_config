@@ -124,7 +124,7 @@ configure_prompt() {
 # These delimiters must not be modified. Thanks.
 # START KALI CONFIG VARIABLES
 PROMPT_ALTERNATIVE=twoline
-NEWLINE_BEFORE_PROMPT=yes
+NEWLINE_BEFORE_PROMPT=no
 # STOP KALI CONFIG VARIABLES
 
 if [ "$color_prompt" = yes ]; then
@@ -277,4 +277,3 @@ alias ctf='~/script/ctf/ctf.sh'
 alias burp='~/script/burpsuite.sh'
 alias adbon="adb shell settings put global http_proxy $(ifconfig | grep wlan0 -A 5 | head -n 2| tail -n 1| awk '{print $2 }')"
 alias adboff='adb shell settings put global http_proxy :0'
-

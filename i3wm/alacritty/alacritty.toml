@@ -1,0 +1,57 @@
+[window]
+decorations = "None"
+dynamic_padding = false
+padding = { x = 18, y = 4 }
+opacity = 0.98
+
+[font]
+normal = { family = "Iosevka", style = "Regular" }
+bold = { family = "Iosevka", style = "Bold" }
+italic = { family = "Iosevka", style = "Italic" }
+size = 15.0
+
+[colors.primary]
+background = "#0f172a"
+foreground = "#e2e8f0"
+
+[colors.cursor]
+text = "#0f172a"
+cursor = "#38bdf8"
+
+[colors.selection]
+text = "#0f172a"
+background = "#7dd3fc"
+
+[colors.normal]
+black = "#1e293b"
+red = "#fb7185"
+green = "#a3e635"
+yellow = "#fbbf24"
+blue = "#60a5fa"
+magenta = "#c084fc"
+cyan = "#22d3ee"
+white = "#cbd5e1"
+
+[colors.bright]
+black = "#475569"
+red = "#fda4af"
+green = "#bef264"
+yellow = "#fde68a"
+blue = "#93c5fd"
+magenta = "#d8b4fe"
+cyan = "#67e8f9"
+white = "#f8fafc"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 600
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[mouse]
+hide_when_typing = true

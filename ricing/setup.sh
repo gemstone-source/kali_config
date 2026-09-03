@@ -38,6 +38,24 @@ mkdir -p "$HOME/.local/bin"
 ln -sf "$RICE_ROOT/bin/rice" "$HOME/.local/bin/rice"
 ln -sf "$RICE_ROOT/bin/rice-stats" "$HOME/.local/bin/rice-stats"
 
+if command -v gcc >/dev/null 2>&1; then
+  info "installing VMware Aquamarine EGL workaround..."
+  VMWARE_EGL_SHIM="$HOME/.local/lib/libaquamarine-vmware-egl.so"
+  mkdir -p "$HOME/.local/lib"
+  gcc -shared -fPIC -O2 -Wall -Wextra -Werror \
+    "$RICE_ROOT/bin/aquamarine-vmware-egl.c" -ldl -o "$VMWARE_EGL_SHIM"
+
+  mkdir -p "$HOME/.local/share/wayland-sessions"
+  printf '%s\n' \
+    '[Desktop Entry]' \
+    'Name=Hyprland (VMware workaround)' \
+    'Comment=Hyprland with the Aquamarine shared-EGL workaround' \
+    "Exec=/usr/bin/env LD_PRELOAD=$VMWARE_EGL_SHIM /usr/bin/start-hyprland" \
+    'TryExec=/usr/bin/start-hyprland' \
+    'Type=Application' \
+    > "$HOME/.local/share/wayland-sessions/hyprland-vmware.desktop"
+fi
+
 link_file() {
   local src="$1" dst="$2"
   mkdir -p "$(dirname "$dst")"
